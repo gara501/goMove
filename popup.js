@@ -115,9 +115,23 @@ function loadExcercises() {
     // Parse JSON string into object
       var excercises = JSON.parse(response);
       console.log(excercises);
-      foreach (item in excercises) {
-        
-      }
+      excercises.forEach(function(item){
+        console.log(item);
+      });
+      
+      var name = "Wake Up!";
+      var alarmInfo = {
+        'delayInMinutes': 1,
+        'periodInMinutes': 1
+      };
+
+      chrome.alarms.create(name, alarmInfo);
+      chrome.alarms.get(name, function(a) { console.log(a); });
+      chrome.alarms.onAlarm.addListener(function (data) {
+        console.log('ALARMA DISPARADA');
+      });
+      //chrome.alarms.clear(name, function(wasCleared) { console.log(wasCleared); });
+
    });
 }
 

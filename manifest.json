@@ -12,6 +12,8 @@
   },
   "permissions": [
     "activeTab",
+    "tabs",
+    "alarms",
     "https://ajax.googleapis.com/",
     "http://www.bodybuilding.com/"
   ]
